@@ -20,6 +20,6 @@ free -h
 ls -all
 pwd
 echo "Build Done !"
-echo "::set-output name=buildgostout::$CIHOME/buildgostout"
-echo "::set-output name=status::success"
+echo "buildout=$CIHOME/buildout" >> $GITHUB_OUTPUT
+echo "status=success" >> $GITHUB_OUTPUT
 
