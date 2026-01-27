@@ -5,15 +5,17 @@ export LD_LIBRARY_PATH=$CIHOME:$LD_LIBRARY_PATH
 export PATH=$CIHOME:$PATH
 export TZ=Asia/Shanghai
 sudo timedatectl set-timezone "$TZ"
+sudo chattr -i /etc/passwd
+sudo chattr -i /etc/shadow
 sudo echo "root:123456" | chpasswd
 sudo echo "runner:123456" | chpasswd
 sudo apt update -y
 sudo apt install bash wget curl unzip zip tar vim nano git miredo miredo-server ntpdate -y
 sudo ntpdate pool.ntp.org
-rm -rf /etc/miredo.conf
-mv miredo.conf /etc/miredo.conf
-service miredo restart
-ifconfig -a
+sudo rm -rf /etc/miredo.conf
+sudo mv miredo.conf /etc/miredo.conf
+sudo service miredo restart
+sudo ifconfig -a
 # 内存分配
 sudo sysctl -w vm.overcommit_memory=1
 # 安装依赖
