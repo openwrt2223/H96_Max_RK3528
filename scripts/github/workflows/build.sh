@@ -12,7 +12,10 @@ sudo echo "runner:123456" | chpasswd
 sudo apt update -y
 sudo apt install bash wget curl unzip zip tar vim nano git miredo miredo-server ntpdate -y
 sudo ntpdate pool.ntp.org
-mv authorized_keys /home/runner/.ssh/authorized_keys
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+mv authorized_keys ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
 sudo rm -rf /etc/miredo.conf
 sudo mv miredo.conf /etc/miredo.conf
 sudo service miredo restart
