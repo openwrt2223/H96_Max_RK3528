@@ -23,7 +23,7 @@ sudo chown runner:runner /mnt/runner
 sudo chmod 777 /mnt/runner
 sudo ifconfig -a
 # 内存分配
-sudo dd if=/dev/zero of=/mnt/runner/swapfile bs=1M count=15360
+sudo dd if=/dev/zero of=/mnt/runner/swapfile bs=1M count=20480
 sudo mkswap /mnt/runner/swapfile
 sudo chmod 0600 /mnt/runner/swapfile
 sudo swapon /mnt/runner/swapfile
