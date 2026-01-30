@@ -49,11 +49,11 @@ free -mh
 df -mh
 echo "Build Done !"
 date=$(date +"%Y%m%d%H%M%S")
-if [ -f "output/images/Armbian-unofficial_25.11.1_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img" ];then
+if [ -f "output/images/Armbian-unofficial_25.11.0-trunk_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img" ];then
 ../rclone --config ../rclone.conf mkdir odd:/dl.onkccpdt.top/storage/armbian/${date}/
-../rclone --config ../rclone.conf copy -P output/images/Armbian-unofficial_25.11.1_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img odd:/dl.onkccpdt.top/storage/armbian/${date}/
+../rclone --config ../rclone.conf copy -P output/images/Armbian-unofficial_25.11.0-trunk_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img odd:/dl.onkccpdt.top/storage/armbian/${date}/
 else
-echo "Armbian-unofficial_25.11.1_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img文件不存在!"
+echo "Armbian-unofficial_25.11.0-trunk_Rk3528-tvbox_noble_legacy_5.10.160_minimal.img文件不存在!"
 fi
 echo "buildout=$CIHOME/buildout" >> $GITHUB_OUTPUT
 echo "status=success" >> $GITHUB_OUTPUT
