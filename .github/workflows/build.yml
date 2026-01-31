@@ -9,6 +9,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions: write-all
+
 jobs:
   Build:
     if: "(! contains(toJSON(github.event.commits.*.message), '[skip-ci]'))"
