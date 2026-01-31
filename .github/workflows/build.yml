@@ -19,6 +19,8 @@ jobs:
          uses: actions/checkout@v6
        - name: Build
          id: build
+         env:
+           SECRETSPATH: ${{ secrets.SECRETSPATH }}
          run: bash scripts/github/workflows/build.sh
 
        - name: Upload Gost To Artifact
